@@ -1,0 +1,8 @@
+p {
+  @apply bg-yellow-500;
+  font-size: 45px;
+
+  &.active {
+    background: #000;
+  }
+}
