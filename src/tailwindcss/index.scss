@@ -5,3 +5,37 @@
 @tailwind utilities;
 
 @import '../scss/style';
+
+@layer base {
+  :root {
+    --color-text-base: #ffffff;
+    --color-primary-600: #0A0B27;
+    --color-primary-500: #17184C;
+    --color-primary-400: #262756;
+    --color-primary-300: #5458ee;
+    --color-primary-200: #7071d4;
+    --color-primary-100: #adaee6;
+    --color-secondary-600: #41391B;
+    --color-secondary-500: #7f5823;
+    --color-secondary-400: #e4aa56;
+    --color-secondary-300: #C39859;
+    --color-secondary-200: #dabb8c;
+    --color-secondary-100: #ecddc5;
+  }
+  
+  .theme-red {
+    --color-text-base: yellow;
+    --color-primary-600: red;
+    --color-primary-500: #17184C;
+    --color-primary-400: #262756;
+    --color-primary-300: #5458ee;
+    --color-primary-200: #7071d4;
+    --color-primary-100: #adaee6;
+  }
+  
+  
+  body {
+    @apply bg-default bg-cover bg-center bg-skin-fill theme-red;
+    background-blend-mode: normal, color, normal;
+  }
+}
