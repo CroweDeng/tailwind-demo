@@ -1,3 +1,12 @@
+function withOppacity(variablesNames) {
+  return ({ oppacityValue }) => {
+    if (oppacityValue !== undefined) {
+      return `rgba(var(${variablesNames}, ${oppacityValue})`;
+    }
+    return `rgb(var(${variablesNames}))`;
+  };
+}
+
 module.exports = {
   // 偵測壓縮的檔案，包板時(npm run build)時會進行過濾，沒有用到的就去除
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -69,7 +78,7 @@ module.exports = {
       },
       textColor: {
         skin: {
-          base: 'var(--color-text-base)',
+          base: withOppacity('--color-text-base'),
           muted: 'var(--color-primary-100)',
         },
       },

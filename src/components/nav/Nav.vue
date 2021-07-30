@@ -58,7 +58,9 @@ nav {
     }
 
     &.active {
+      // 運用在scss裡的 text-skin-base 變體沒有轉換
       @apply font-bold text-lg text-skin-base;
+      color: rgb(var(--color-text-base));
 
       &::before {
         bottom: 0;
